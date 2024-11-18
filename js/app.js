@@ -19,6 +19,16 @@ function adicionar() {
 
 function sortear() {
     embaralha(amigos);
+    //8 declarando variável para manipular lista posteriormente
+    let sorteio = document.getElementById('lista-sorteio')
+    //7 após embaralhar, o loop percorre todos os elementos (nomes) e seleciona ele mais um, fazendo com que o ultimo nome sorteie o primeiro e assim sucessivamente
+    for (let i = 0; i < amigos.length; i++) {
+        if (i == amigos.length - 1) {
+            sorteio.innerHTML = sorteio.innerHTML + amigos[i] + ' --> ' + amigos[0] + '<br>';
+        } else {
+            sorteio.innerHTML = sorteio.innerHTML + amigos[i] + ' --> ' + amigos[i + 1] + '<br>';
+            }
+    }
 }
 
 //6 função para embaralhar arrays retirada de artigo
